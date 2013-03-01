@@ -1,50 +1,65 @@
-html, body {
-  height:100%;
-  background: url(../images/bg.gif) repeat #202429;
+body {
+  font-family: "Whitney SSm A", "Whitney SSm B", Helvetica, Arial, sans-serif;
+  color: #4e443c;
+  font-size: 14px;
+  background: url(../images/bg.jpg) fixed;
 }
 
-#header-wrapper {
-  opacity: 0.4;
-  background: #000;
-}
 #header {
-  height: 100px;
-  width: 1024px;
   margin: auto;
-  padding: 20px;
+  width: 1024px;
+  height: 50px;
+  padding: 30px;
+  font-size: 20px;
+  font-weight: bold;
+  border-bottom: 2px solid #E8E5E0;
+  margin-bottom: 20px;
 }
 #logo {
   float: left;
   display: block;
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 50px;
 }
 #header nav {
   float: right;
-  width: 600px;
 }
 #header nav a {
   display: inline-block;
-  width: 80px;
-  height: 80px;
-  margin-right: 20px;
-  background: #CCC;
-  border-radius: 50px;
+  width: 160px;
+  color: #9B9FA2;
+  height: 50px;
+  font-family: "Whitney SSm A", "Whitney SSM B", Helvetica, Arial, sans-serif;
+  -webkit-transition: color 0.2s ease-in-out;
+  -moz-transition: color 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out;
+  line-height: 50px;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 3px;
 }
 
+#header nav a:hover {
+  color: #4e443c;
+}
 
 #content {
   min-height: 400px;
+  margin: auto;
+  width: 1024px;
 }
 
 #comments-wrapper {
-  height: 200px;
-  opacity: 0.6;
-  background: #000;
+  height: 300px;
+  background: url(../images/bg-dark.jpg) fixed;
+}
+#comments {
+  margin: auto;
+  width: 1024px;
 }
 
 #footer {
+  margin: auto;
+  width: 1024px;
   height: 100px;
-  opacity: 0.8;
-  background: #000;
 }
