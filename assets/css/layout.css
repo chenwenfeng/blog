@@ -55,7 +55,34 @@ body {
 }
 #comments {
   margin: auto;
-  width: 1024px;
+  width: 980px;
+}
+
+#comments-container {
+  max-height: 200px;
+  min-height: 100px;
+  margin: 20px 0 10px 0;
+  background: #FFF;
+  overflow-y: auto;
+  border-radius: 5px;
+  border: 1px solid #666;
+}
+
+#box-email, #box-name {
+  width: 300px;
+  height: 25px;
+  border-radius: 10px;
+  margin: 10px 30px 10px 0;
+  padding: 0 10px;
+  border: none;
+}
+#box-comment {
+  width: 960px;
+  height: 60px;
+  border-radius: 10px;
+  border: 1px solid #666;
+  resize: none;
+  padding: 10px;
 }
 
 #footer {
