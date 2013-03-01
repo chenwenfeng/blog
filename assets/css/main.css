@@ -1,0 +1,23 @@
+p {
+  color: #4E443C;
+  font-family: 'Whitney SSm A', 'Whitney SSm B', Helvetica, Arial, sans-serif;
+}
+
+/* title */
+h3 {
+  font-family: 'Tungsten A', 'Tungsten B', Helvetica, Arial, sans-serif;
+  font-size: 38px;
+  font-weight: bold;
+  color: #665950;
+}
+h3: hover {
+  color: #FC6B35;
+
+}
+
+/* time */
+h4 {
+  color: #9D9690;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
