@@ -58,7 +58,7 @@ body {
   width: 980px;
 }
 
-#comments-container {
+.comments-container {
   max-height: 200px;
   min-height: 100px;
   margin: 20px 0 10px 0;
@@ -67,8 +67,17 @@ body {
   border-radius: 5px;
   border: 1px solid #666;
 }
+.comments-container .name,
+.comments-container .email,
+.comments-container .time {
+  padding: 10px 20px;
+}
 
-#box-email, #box-name {
+.comments-container .body {
+  padding: 10px;
+}
+
+.comment-email, .comment-name {
   width: 300px;
   height: 25px;
   border-radius: 10px;
@@ -76,13 +85,21 @@ body {
   padding: 0 10px;
   border: none;
 }
-#box-comment {
+.comment-text {
   width: 960px;
   height: 60px;
   border-radius: 10px;
   border: 1px solid #666;
   resize: none;
   padding: 10px;
+}
+.comment-send {
+  width: 100px;
+  height: 25px;
+  border-radius: 20px;
+  background: #CCC;
+  text-align: center;
+  border: none;
 }
 
 #footer {

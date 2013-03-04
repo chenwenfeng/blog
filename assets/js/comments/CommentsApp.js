@@ -1,28 +1,25 @@
-var ChatBox = function(container, userId, model) {
+var CommentsApp = function(container, model) {
   this.container_ = container;
   this.model_ = model;
-  this.userId_ = userId;
 
   this.init_();
 };
 
-ChatBox.prototype.init_ = function() {
+CommentsApp.prototype.init_ = function() {
   var self = this;
-  $(this.container_).find('.message-send').click(function(e) {
-    var ni = $(self.container_).find('.message-input-name');
+  $(this.container_).find('.comment-send').click(function(e) {
+    var ni = $(self.container_).find('.comment-name');
     var name = ni.val();
-    if (name == '') {
-      ni.focus();
-      return false;
-    }
-    var mi = $(self.container_).find('.message-input');
+    var ei = $(self.container_).find('.comment-email');
+    var email = ni.val();
+    var mi = $(self.container_).find('.comment-text');
     var text = mi.val().trim();
     if (text == '') {
       mi.focus();
       return false;
     }
 
-    self.model_.sendMessage(self.userId_, name, text);
+    self.model_.sendMessage(email, name, text);
     mi.val('');
   });
 
@@ -31,22 +28,20 @@ ChatBox.prototype.init_ = function() {
   });
 
   this.model_.init();
-  this.model_.markSelfOnline(this.userId_);
 };
 
-ChatBox.prototype.renderMessages_ = function(messages) {
-  var list = $(this.container_).find('.message-container');
+CommentsApp.prototype.renderMessages_ = function(messages) {
+  var list = $(this.container_).find('.comments-container');
   list.empty();
   messages.forEach(function(message) {
     var time = new Date(message['time']);
     var formatDate = time.toTimeString().split(' ')[0];
-    if (message['visible'] || (message['userId'] === this.userId_)) {
-      $('<pre/>')
-          .append($('<span class="message-name"/>').text(message['name']))
-          .append($('<span class="message-time"/>').text(formatDate))
-          .append($('<div class="message-body"/>').text(message['text']))
-          .appendTo(list);
-    }
+    $('<pre/>')
+        .append($('<span class="name"/>').text(message['name']))
+        .append($('<span class="email"/>').text(message['email']))
+        .append($('<span class="time"/>').text(formatDate))
+        .append($('<div class="comment-body"/>').text(message['text']))
+        .appendTo(list);
   }, this);
   list[0].scrollTop = list[0].scrollHeight;
 };
